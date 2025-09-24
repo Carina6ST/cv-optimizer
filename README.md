@@ -63,16 +63,21 @@ Planned (examples):
 
 > This repo is intentionally lightweight. Replace the placeholders below with what you actually use.
 
-**Frontend**
+**Frontend**(Atanaska Atanasova)
 
 * JavaScript (e.g., React + Vite, or vanilla).
 * Package scripts typically: `npm run dev` (Vite) or `npm start` (CRA).
 
-**Backend**
+**Backend**(Cristina Teaca)
 
 * Python 3.x (e.g., FastAPI or Flask).
 * Typical entrypoints: `app.py` or `main.py` with Uvicorn/Flask runner.
 
+**Project Lead and Software Tester**(Carina Nazarenco)
+* Python 3.x .
+* JavaScript .
+* Jira .
+  
 > If your stack differs (e.g., Node/Express, PHP/Laravel), update this section accordingly.
 
 ---
