@@ -1,0 +1,26 @@
+# OS/IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Node/Frontend
+node_modules/
+dist/
+build/
+.next/
+.nuxt/
+*.log
+
+# PHP/Composer
+/vendor/
+composer.lock
+
+# Python 
+.venv/
+venv/
+__pycache__/
+
+# Env/Secrets
+.env
+.env.*.local
