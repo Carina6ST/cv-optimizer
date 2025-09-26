@@ -25,6 +25,11 @@
 
 ---
 
+🔗 Quick Links
+- **Code Repository (this repo):** [CV Optimizer GitHub](https://github.com/Carina6ST/cv-optimizer)  
+- **Jira Board:** [COW Project Board](https://cristinaaateaca.atlassian.net/jira/software/projects/COW/boards/67)  
+
+---
 ## Overview
 
 **CV Optimizer** is an educational project that aims to:
@@ -42,44 +47,42 @@ You can use this codebase to prototype ideas around ATS friendliness, keyword co
 
 ## Features
 
-Current (minimal):
+**Current:**
+- ✅ Separate frontend and backend for clean development.
+- ✅ CV upload and text parsing (PDF/DOCX).
+- ✅ JD input and keyword coverage scoring.
+- ✅ Results view with suggestions.
+- ✅ Basic auth stub with Firebase config.  
 
-* ✅ Separate **frontend** and **backend** to keep concerns isolated.
-* ✅ Local development setup instructions for Windows/macOS/Linux.
-
-Planned (examples):
-
-* ☐ CV upload (PDF/DOCX) and text extraction
-* ☐ JD paste/URL input
-* ☐ Keyword coverage and skill matching
-* ☐ Scoring & simple suggestions
-* ☐ Export optimized CV (Markdown/PDF)
-* ☐ Authentication (basic)
-* ☐ Docker dev setup
+**Planned:**
+- ☐ Stripe payments for premium features.
+- ☐ Export optimized CV (Markdown/PDF).
+- ☐ Full usability testing (planned but not completed).
+- ☐ Docker/Compose setup for easy local dev. 
 
 ---
 
 ## Tech Stack
 
-> This repo is intentionally lightweight. Replace the placeholders below with what you actually use.
+**Frontend**  
+- React.js + Tailwind CSS  
+- Vite dev server (`npm run dev`)  
 
-**Frontend**(Atanaska Atanasova)
+**Backend**  
+- Python 3.x with Flask REST API  
+- Key libraries: `pdfplumber`, `python-docx`, `spaCy`, `NLTK`  
 
-* JavaScript (e.g., React + Vite, or vanilla).
-* Package scripts typically: `npm run dev` (Vite) or `npm start` (CRA).
+**Other Tools**  
+- Firebase (auth stub, planned DB config)  
+- Stripe (planned, not integrated)  
+- Deployment: Render/Vercel  
+- Version control: GitHub  
 
-**Backend**(Cristina Teaca)
-
-* Python 3.x (e.g., FastAPI or Flask).
-* Typical entrypoints: `app.py` or `main.py` with Uvicorn/Flask runner.
-
-**Project Lead and Software Tester**(Carina Nazarenco)
-* Python 3.x .
-* JavaScript .
-* Jira .
+**Team Roles**  
+- **Carina (Project Lead & Tester):** planning, Jira tracking, QA, documentation.  
+- **Cristina (Backend Developer):** Flask endpoints and parsing logic.  
+- **Atanaska (Frontend Developer):** React/Tailwind UI and results view.  
   
-> If your stack differs (e.g., Node/Express, PHP/Laravel), update this section accordingly.
-
 ---
 
 ## Project Structure
@@ -135,16 +138,13 @@ uvicorn main:app --reload --port 8000
 # flask run --port 8000
 ```
 
-The backend should now be available at: `http://localhost:8000` (or as configured).
+The backend should now be available at: `http://localhost:8000`.
 
 ### Frontend — Run locally
 
 ```bash
 cd frontend
-# Install dependencies
 npm install
-# or: pnpm install / yarn install
-
 # Start dev server (Vite/CRA)
 npm run dev    # Vite (usually http://localhost:5173)
 # or
@@ -181,48 +181,43 @@ VITE_API_URL=http://localhost:8000
 
 ---
 
-## API (work in progress)
+## API (current)
 
-Common endpoints you might add:
+POST /api/parse-cv → upload CV; returns extracted text.
 
-* `POST /api/parse-cv` — upload CV (PDF/DOCX); returns extracted text/structure
-* `POST /api/score` — CV text + JD text ⇒ returns coverage/score
-* `GET /api/health` — health check
+POST /api/score → CV + JD text; returns coverage score and keyword lists.
 
-Document any real endpoints you implement.
+GET /api/health → simple health check.
+
+>Document any real endpoints you implement.
 
 ---
 
 ## Roadmap
 
-* [ ] Define exact backend framework (FastAPI/Flask) and entrypoint
-* [ ] Implement CV upload + parsing (e.g., pdfminer, PyMuPDF, mammoth for DOCX)
-* [ ] JD input (paste/URL)
-* [ ] Matching & scoring (keywords/embeddings)
-* [ ] UI flows (upload, review, suggestions, export)
-* [ ] Basic auth & user sessions
-* [ ] Docker/Compose for one‑command local dev
-* [ ] CI (lint/test) with GitHub Actions
+* [ ] Expand NLP keyword matching (better accuracy with spaCy pipelines).
+* [ ] Add CV export options (Markdown/PDF).
+* [ ] Stripe payments for premium features.
+* [ ] Usability testing with 30+ users.
+* [ ] Docker setup for quick local dev.
+* [ ] CI pipeline with GitHub Actions.
 
 ---
 
 ## Contributing
 
-1. Create a feature branch: `git checkout -b feature/short-name`
-2. Commit small, readable changes.
-3. Open a Pull Request to `main` and describe your change.
-
-If several people worked on a commit, consider using `Co-authored-by:` trailers.
+1. Create a branch: git checkout -b feature/short-name
+2. Commit small, focused changes.
+3. Open a Pull Request into main.
 
 ---
 
 ## License
 
-No license specified yet. Consider adding one (e.g., MIT) as `LICENSE` in the repo root.
+No license yet. Consider adding LICENSE (MIT recommended).
 
 ---
 
 ### Notes
 
-* This README is intentionally concise and **starter‑friendly**. Replace placeholders with the real commands/files used in your project.
-* If your repository layout changes, update the **Project Structure** and **Getting Started** sections accordingly.
+This README documents both the current MVP and the planned roadmap. It supports the coursework portfolio by linking code, Jira board, diagrams, and project planning artefacts.And this repository and README were organised by **Carina Nazarenco** (Project Lead & Tester) as part of the coursework portfolio. The structure, documentation, and artefact links are intentionally designed to demonstrate planning, coordination, and delivery of the CV Optimizer project.  
